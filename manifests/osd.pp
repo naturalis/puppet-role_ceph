@@ -4,7 +4,7 @@ class role_ceph::osd (
 	$adminkey,
 	){
 
-	#class {"ceph::package":}
+	class {"ceph::package":}
 	class {"ceph::osd":
 		monitorkey	=> $monitorkey,
 		adminkey	=> $adminkey,
@@ -14,6 +14,7 @@ class role_ceph::osd (
 		row			=> 'row',
 		rack		=> 'rack',
 		disks 		=> 'disks',
+		require		=> Class['ceph::package']
 	}
 
 }
