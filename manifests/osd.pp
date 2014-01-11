@@ -2,7 +2,7 @@ class role_ceph::osd (
 	$fsid,
 	$monitorkey,
 	$adminkey,
-	$disks,
+	$disks  = 'sdb,sdc,sdd'
 	){
 
 	class {"ceph::package":}
