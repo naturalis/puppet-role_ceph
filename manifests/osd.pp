@@ -12,8 +12,6 @@ class role_ceph::osd (
     adminkey	=> $adminkey,
     fsid		=> $fsid,
     datacenter	=> $datacenter,
-    room 		=> 'room',
-    row			=> 'row',
     rack		=> $rack,
     disks 		=> $disks,
     require		=> Class['ceph::package'],
