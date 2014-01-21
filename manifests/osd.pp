@@ -8,12 +8,12 @@ class role_ceph::osd (
   ){
   class {"ceph::package":}
   class {"ceph::osd":
-    monitorkey	=> $monitorkey,
-    adminkey	=> $adminkey,
-    fsid		=> $fsid,
+    monitorkey  => $monitorkey,
+    adminkey    => $adminkey,
+    fsid        => $fsid,
     datacenter	=> $datacenter,
-    rack		=> $rack,
-    disks 		=> $disks,
-    require		=> Class['ceph::package'],
+    rack		    => $rack,
+    disks 		  => $disks,
+    require     => Class['ceph::package'],
   }
 }
