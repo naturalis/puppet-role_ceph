@@ -15,9 +15,9 @@ class role_ceph::osd (
 		datacenter	=> $datacenter,
 		room 		=> 'room',
 		row			=> 'row',
-		rack		=> $datacenter,
+		rack		=> $rack,
 		disks 		=> $disks,
-		require		=> Class['ceph::package']
+		require		=> Class['ceph::package'],
 	}
 
 }
