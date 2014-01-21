@@ -2,6 +2,8 @@ class role_ceph::osd (
 	$fsid,
 	$monitorkey,
 	$adminkey,
+	$datacenter,
+	$rack,
 	$disks  = 'sdb,sdc,sdd'
 	){
 
@@ -10,10 +12,10 @@ class role_ceph::osd (
 		monitorkey	=> $monitorkey,
 		adminkey	=> $adminkey,
 		fsid		=> $fsid,
-		datacenter	=> 'datacenter',
+		datacenter	=> $datacenter,
 		room 		=> 'room',
 		row			=> 'row',
-		rack		=> 'rack',
+		rack		=> $datacenter,
 		disks 		=> $disks,
 		require		=> Class['ceph::package']
 	}
