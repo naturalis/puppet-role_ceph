@@ -4,7 +4,7 @@ class role_ceph::osd (
   $adminkey,
   $datacenter,
   $rack,
-  $disks  = 'sdb,sdc,sdd',
+  $disks,
   ){
   class {"ceph::package":}
   class {"ceph::osd":
