@@ -3,6 +3,8 @@ class role_ceph::client (
 	){
 
 	class {"ceph::clientpackage":}
-	Ini_setting <<| tag == "cephconf-${fsid}" |>>
+	Ini_setting <<| tag == "cephconf-${fsid}" |>> {
+		require => Class["ceph::clientpackage"],
+	}
 
 }
