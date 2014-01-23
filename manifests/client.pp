@@ -2,7 +2,7 @@ class role_ceph::client (
 	$fsid,
 	){
 
-	class {"ceph::cleintpackage":}
+	class {"ceph::clientpackage":}
 	Ini_setting <<| tag == "cephconf-${fsid}" |>>
 
 }
