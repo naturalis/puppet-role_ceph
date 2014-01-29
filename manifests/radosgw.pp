@@ -1,4 +1,6 @@
-class role_ceph::radosgw (){
+class role_ceph::radosgw (
+  $fsid,
+){
   
   
   class {"ceph::package::client":}
@@ -6,6 +8,7 @@ class role_ceph::radosgw (){
     require => Class["ceph::package::client"],
   }
   class {"ceph::radosgw":
+    fsid	=> $fsid,
     require => Class["ceph::package::radosgw"],
   }
 
